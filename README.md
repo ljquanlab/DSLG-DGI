@@ -30,27 +30,7 @@ pip install -r requirements.txt
 
 Please follow these steps in order to run the complete reproduction pipeline.
 
-3## (Optional) Step 2.1: Generate Graph Edge Files
-
-> **Note**: Only run these scripts if your `/data` directory is missing `drug_drug_edges.csvp / `gene_gene_edges.csvp.
-  **Generate Drug-Drug (D-D) Edges**
-    * **Purpose**: Generates D-D edges based on SMILES iality.
-    * **Command**:
-        ```bash
-        python code/create_drug_edges.py
-        ```
-    * **Outputs**:
-        `data/drug_drug_edges.csv`
-  **Generate Gene-Gene (G-G) Edges**
-    * **Purpose**: Extracts GG Edges from the STRING database (9606.*.gz).
-    * **Command**:
-        ```bash
-        python code/create_gene_edges.py
-        ```
-    * **Outputs**:
-        `data/gene_gene_edges.csv`
-
-### Step 2.2: LLM Finetuning
+3### Step 2.1: LLM Finetuning
 
 This phase covers data preparation and executing fnetuning.
 
@@ -71,7 +51,7 @@ This phase covers data preparation and executing fnetuning.
     * **Outputs(**:
         `./pubmedbert_finetuned_relation_classifier/final` (finetuned model)
 
-3## Step 2.3: Build Graph Data
+3## Step 2.2: Build Graph Data
 
 This phase extracts node features and builds the graph.
 
